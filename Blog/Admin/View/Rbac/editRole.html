@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>角色编辑</title>
+</head>
+<body>
+<form method="post" action="__CONTROLLER__/editRole/id/{$data.id}">
+    <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal">
+            &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+            角色编辑
+        </h4>
+    </div>
+    <div class="modal-body" >
+        <div class="form-group">
+            <label for="name">角色名称</label>
+            <input type="text" class="form-control" name="name" id="name" value="{$data.name}">
+        </div>
+        <div class="form-group">
+            <label for="remark">角色描述</label>
+            <input type="text" class="form-control" name="remark" id="remark" value="{$data.remark}">
+        </div>
+        <div class="checkbox">
+            <label>
+                <if condition="$data.status eq 1">
+                    <input name="status" checked="checked" value="1" type="checkbox">是否启用
+                    <else/>
+                    <input name="status" value="1"  type="checkbox">是否启用
+                </if>
+            </label>
+        </div>
+
+        <foreach name="data.access" item="module">
+            <div class="panel panel-default module-box">
+                <div class="panel-heading">
+                    <label class="checkbox-inline">
+                        <input type="checkbox" class="module" <notempty name="module.checked">checked=""</notempty>  name="access[]"  value="{$module.id}_1">
+                        <h3 class="panel-title">{$module.title}</h3>
+                    </label>
+                </div>
+
+                <foreach name="module.child" item="controller">
+                    <div class="panel-body controller-box">
+                        <div class="controller col-xs-3 ">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" <notempty name="controller.checked">checked=""</notempty>  name="access[]" class="controller" value="{$controller.id}_2">
+
+                                <strong>{$controller.title}</strong>
+                            </label>
+                        </div>
+
+                        <foreach name="controller.child" item="action">
+                            <div class="col-xs-3 acttion-box">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox"  <notempty name="action.checked">checked=""</notempty> name="access[]" class="action"  value="{$action.id}_3">
+                                    {$action.title}
+                                </label>
+                            </div>
+                        </foreach><!--action-->
+
+                    </div><!--controller-->
+                </foreach><!--controller-->
+
+            </div>
+        </foreach><!--module-->
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default"
+                data-dismiss="modal">关闭
+        </button>
+        <button type="submit"  class="btn btn-primary">
+            提交更改
+        </button>
+    </div>
+</form>
+
+<script>
+    jQuery(document).ready(function($) {
+        $("input").on("change",function(){
+            if($(this).attr('class') == "module"){ //module
+                $inputs  = $(this).parents(".module-box").find("input");
+                if( $(this).is(":checked") ){
+                    $inputs.prop('checked',true);
+                }else{
+                    $inputs.prop('checked',false);
+                }
+            }else if ( $(this).attr("class") == "controller"){ // controller
+                $inputs = $(this).parents(".controller-box").find("input");
+                $moduleInput = $(this).parents(".module-box").find("input.module");
+                if( $(this).is(":checked") ){
+                    $moduleInput.prop('checked',true);
+                    $inputs.prop('checked',true);
+                }else{
+                    $inputs.prop('checked',false);
+                }
+            }else{
+                $moduleInput = $(this).parents(".module-box").find("input.module");
+                $controllerInput = $(this).parents(".controller-box").find("input.controller");
+                if( $(this).is(":checked") ){ //module
+                    $moduleInput.prop('checked',true);
+                    $controllerInput.prop('checked',true);
+                }
+            }
+        })
+
+    });
+</script>
+
+</body>
+</html>

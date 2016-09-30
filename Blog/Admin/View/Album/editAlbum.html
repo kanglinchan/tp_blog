@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>addAlbum</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/webuploader.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery.Jcrop.css">
+
+</head>
+<body>
+
+
+<script src="__PUBLIC__/js/webuploader.withoutimage.min.js"></script>
+<script src="__PUBLIC__/js/jquery.Jcrop .js"></script>
+
+
+
+<div class="addAlbum">
+
+
+
+    <form method="post" action="__CONTROLLER__/editAlbum/id/{$data['id']}">
+        <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal">
+                &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+                添加相册
+            </h4>
+        </div>
+        <div class="modal-body" >
+
+
+            <div class="cover clearfix">
+
+                <div class="col-xs-8 crop-box">
+                    <div id="picker">选择文件</div>
+                </div >
+                <div class="col-xs-4 ">
+                    <div class="preview">
+                        <img class="rowImage" src="__PUBLIC__{$data['cover']}" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <input type="hidden" name="width">
+            <input type="hidden" name="height">
+            <input type="hidden" name="x">
+            <input type="hidden" name="y">
+            <input type="hidden" name="cropWidth">
+            <input type="hidden" name="cropHeight">
+            <input type="hidden" name="imageFile">
+
+
+
+            <div class="form-group">
+                <label for="title">
+                    封面名称
+                </label>
+                <input type="text" class="form-control" name="title" id="title" value="{$data['title']}">
+            </div>
+
+
+
+            <div class="checkbox">
+                <label>
+                    <if condition="$data['status'] eq 1">
+                        <input name="status" checked="checked" value="1" type="checkbox">是否显示
+                        <else/>
+                        <input name="status"  value="1" type="checkbox">是否显示
+                    </if>
+
+                </label>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+                    data-dismiss="modal">关闭
+            </button>
+            <button type="submit"  class="btn btn-primary">
+                提交更改
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+    jQuery(document).ready(function($) {
+
+
+       state = 'pending';
+        var BASE_URL = "__APP__";
+
+        var uploader = WebUploader.create({
+
+            // 选完文件后，是否自动上传。
+            auto: true,
+
+            // 不压缩image
+            resize: false,
+
+            // swf文件路径
+            swf: BASE_URL + '/public/js/Uploader.swf',
+
+            // 文件接收服务端。
+            server:BASE_URL +"/Admin/Album/uploadCover",
+
+            // 选择文件的按钮。可选。
+            // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+            pick: '#picker'
+        });
+
+
+        $progress = $("<div>正在上传0%</div>");
+
+        uploader.on( 'uploadProgress', function( file, percentage ) {
+            $picker  = $("#picker");
+            if( $picker.length ){
+                $picker.replaceWith( $progress );
+                $progress.css({
+                    left:"0",
+                    top:"50%",
+                    position:"absolute",
+                    marginTop:$progress.height() /-2+'px',
+                    textAlign:"center",
+                    width:"100%"
+                });
+                $progress.text( "正在上传"+ 100* percentage +'%');
+            }
+        });
+        uploader.on("uploadError",function(){
+            $progress.text("上传出错");
+        });
+
+        //监听成功
+        uploader.on("uploadSuccess",function(file, data){
+            if(data.flag){
+                $img = new Image();
+                $img.src =  data.msg.substring(1);
+                $progress.replaceWith($img);
+                $img.onload = function(){
+                    $($img).parent().css({
+                        paddingBottom:0,
+                    });
+
+                    //加载裁剪插件
+                    crop( $($img) );
+
+                }
+            }else{
+                $progress.text(data.msg);
+            }
+        });
+
+
+
+
+
+
+        function crop( $img ){
+            var jcropApi =null ;
+            $preview = $(".preview");
+            $previewImage = $img.clone();
+            $previewWidth = $preview.width();
+            $preview.css({ height:$preview.width() });
+
+
+            $img.Jcrop({
+                "aspectRatio":1,
+                "touchSupport":true,
+                setSelect: [ 50, 50, 400, 400 ],
+                onSelect:function(data){
+
+                    if( $preview.find(".rowImage").length ){
+                        $preview.find(".rowImage").replaceWith( $previewImage );
+                    }
+
+                    $("input[name='width']").val(  $previewImage.width()  );
+                    $("input[name='height']").val( $previewImage.height() );
+                    $("input[name='x']").val( Math.abs( parseInt( $previewImage.css("left") ) ) );
+                    $("input[name='y']").val( Math.abs( parseInt( $previewImage.css("top") ) ) );
+                    $("input[name='cropWidth']").val( $preview.width() );
+                    $("input[name='cropHeight']").val($preview.height());
+                    $("input[name='imageFile']").val( '.'+$previewImage.attr("src") );
+                },
+                onChange:function(data){
+                    $previewImage.css({
+                        position: 'relative',
+                        width: ( $preview.width() *$img.width() /(data.x2-data.x) ) +"px",
+                        left: -1* (data.x * $preview.width()/(data.x2-data.x) ) +'px',
+                        top: -1* (data.y * $preview.height()/(data.y2-data.y) ) +'px',
+                    });
+
+
+                }
+
+            },function(){
+                jcropApi = this;
+
+            });
+
+
+        }
+
+
+
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+
+
+<div class="categoryList">
+
+    <ol class="breadcrumb">
+        <li><a href="__MODULE__">{$Think.MODULE_NAME}</a></li>
+        <li><a href="__CONTROLLER__">{$Think.CONTROLLER_NAME}</a></li>
+        <li class="active">{$Think.ACTION_NAME}</li>
+    </ol>
+
+
+    <div class="addButton">
+        <button id="addNodeHandler" type="button" class="btn btn-primary" data-toggle="modal" data-target="#Category-modal">
+            <span class="glyphicon glyphicon-plus"></span> 增加分类
+        </button>
+
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="Category-modal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <form method="post" action="__CONTROLLER__/addCategory">
+                        <div class="modal-header">
+
+                            <button type="button" class="close" data-dismiss="modal">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                添加分类
+                            </h4>
+                        </div>
+                        <div class="modal-body" >
+                            <div class="form-group">
+                                <label for="name">
+                                    分类名称
+                                </label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Category Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="select">
+                                    上级分类
+                                </label>
+                                <select class="form-control" id="select" name="pid">
+                                    <option value="0" >顶级分类</option>
+                                    <foreach name="category" item="item">
+                                        <if condition="$item.deep eq 0">
+                                            <option value="{$item.id}" >&nbsp;&nbsp;&nbsp;&nbsp;|——{$item.html}{$item.name}</option>
+                                        </if>
+                                    </foreach>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sort">排序</label>
+                                <input type="text" class="form-control" name="sort" id="sort" value="50" >
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default"
+                                    data-dismiss="modal">关闭
+                            </button>
+                            <button type="submit"  class="btn btn-primary">
+                                提交更改
+                            </button>
+                        </div>
+                    </form>
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </div><!--addNodeButton-->
+
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th width="50">ID</th>
+            <th width="150">分类名称</th>
+            <th width="100">排序编号</th>
+            <th width="120">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <foreach name="category" item="item">
+            <tr>
+                <td> {$item.id}</td>
+                <td>
+                    <if condition="$item.deep gt 0">
+                        &nbsp;&nbsp;&nbsp;|
+                    </if>
+                    {$item.html} {$item.name}
+                </td>
+                <td> {$item.sort}</td>
+                <td>
+                    <a href="__CONTROLLER__/removeCategory/id/{$item.id}" >删除</a>&nbsp;
+                    <a data-toggle="modal" data-target="#Category-modal" href="__CONTROLLER__/editCategory/deepId/{$item.deep}_{$item.id}" >编辑</a>&nbsp;
+                </td>
+            </tr>
+        </foreach>
+        </tbody>
+
+    </table>
+
+
+<!--    <nav style="text-align: center">
+        <ul class="pagination">
+
+            <if condition="$page.current gt 1">
+                <li>
+                    <a href="__CONTROLLER__/index/number/{$page['current'] +1}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            </if>
+            <for start="1" end="$page.total" comparison="elt">
+                <if condition="$page.current eq $i">
+                    <li class="active"><a href="__CONTROLLER__/index/number/{$i}">{$i}</a></li>
+                    <else/>
+                    <li ><a href="__CONTROLLER__/index/number/{$i}">{$i}</a></li>
+                </if>
+            </for>
+            <if condition="$page.current lt $page['total']">
+                <li>
+                    <a href="__CONTROLLER__/index/number/{$page['current']+1}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </if>
+        </ul>
+    </nav>-->
+
+
+
+
+
+

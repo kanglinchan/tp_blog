@@ -1,0 +1,105 @@
+<div class="editUser">
+    <form action="__CONTROLLER__/editUser/id/{$user.id}" method="post">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">编辑用户</h4>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group">
+                <label for="name">
+                    用户名称
+                </label>
+                <input type="text" class="form-control" name="username" id="name" value="{$user.username}">
+            </div>
+            <div class="form-group">
+                <label for="password">
+                    用户密码
+                </label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="password">
+            </div>
+            <div class="form-group">
+                <label for="repassword">
+                    重复密码
+                </label>
+                <input type="password" class="form-control" name="repassword" id="repassword" placeholder="repeat password">
+            </div>
+            <div class="form-group">
+                <label for="email">
+                    电子邮件
+                </label>
+                <input type="email" class="form-control" name="email" id="email" value="{$user.email}">
+            </div>
+            <div class="form-group">
+                <label for="remark">
+                    用户描述
+                </label>
+                <input type="text" class="form-control" name="remark" id="remark" value="{$user.remark}">
+            </div>
+            <div class="form-group mulitSelect-box">
+                <label for="mulitSelect">
+                    选择角色
+                </label>
+                <input type="text" class="form-control"  autocomplete="off" id="mulitSelect" placeholder="select role"  >
+                <ul class="checkList">
+                    <foreach name="user.Role" item="role">
+                        <li>
+                            <label class="checkbox-inline">
+                                <empty name="role.checked">
+                                    <input name="roleId[]" type="checkbox"  value="{$role.id}">{$role.remark}
+                                    <else />
+                                    <input name="roleId[]" type="checkbox" checked="checked"  value="{$role.id}">{$role.remark}
+                                </empty>
+                            </label>
+                        </li>
+                    </foreach>
+                </ul>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input name="status" checked="checked" value="1" type="checkbox">是否启用
+                </label>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="submit" class="btn btn-primary">提交</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    jQuery(document).ready(function($) {
+
+        $("#mulitSelect").on("click",function(event){
+            event.stopPropagation();
+            $selectList = $(this).parents(".mulitSelect-box").find(".checkList");
+            if($selectList.is(":hidden")){
+                $selectList.slideDown("300");
+            }else{
+                $selectList.slideUp("300");
+            }
+        })
+
+        $(".checkList input").on("change",function(){
+            var val = '';
+            $(".checkList input").each(function(){
+                if( $(this).prop('checked')){
+                    val += $(this).parent().text().trim()+';';
+
+                }
+            })
+            $("#mulitSelect").val(val);
+        })
+
+        $(".checkList").on("click",function(){
+            event.stopPropagation();
+        })
+        $(".addUser").on("click",function(){
+            $(".checkList").slideUp("300");
+        })
+
+    });
+</script>

@@ -1,0 +1,61 @@
+
+<div class="nodeList">
+    <ol class="breadcrumb">
+        <li><a href="__MODULE__">{$Think.MODULE_NAME}</a></li>
+        <li><a href="__CONTROLLER__">{$Think.CONTROLLER_NAME}</a></li>
+        <li class="active">{$Think.ACTION_NAME}</li>
+    </ol>
+
+    <div class="addButton">
+        <button  id="addNodeHandler" type="button" class="btn btn-primary" data-toggle="modal" data-target="#node-modal" data-remote="__CONTROLLER__/addNode">
+            <span class="glyphicon glyphicon-plus"></span> 添加应用模块
+        </button>
+
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="node-modal" tabindex="-1" aria-hidden="true" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+    </div>
+
+    <foreach name="data" item="module" >
+
+        <div class="module ">
+            <h3 class="title">{$module.title}</h3>
+            <empty name="module.child">
+                <a href="__CONTROLLER__/removeNode/id/{$module.id}">[删除]</a>
+            </empty>
+            <a data-target="#node-modal" data-toggle="modal" href="__CONTROLLER__/editNode/id/{$module.id}">[编辑]</a>
+            <a data-target="#node-modal" data-toggle="modal" href="__CONTROLLER__/addNode/pid/{$module.id}/level/2">[添加控制器]</a>
+
+            <foreach name="module.child" item="controller">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{$controller.title}&nbsp;
+                        <empty name="controller.child">
+                            <a href="__CONTROLLER__/removeNode/id/{$controller.id}">[删除]</a>
+                        </empty>
+                        <a data-target="#node-modal" data-toggle="modal" href="__CONTROLLER__/editNode/id/{$controller.id}">[编辑]</a>
+                        <a data-target="#node-modal" data-toggle="modal" href="__CONTROLLER__/addNode/pid/{$controller.id}/level/3">[添加方法]</a></div>
+                    <div class="panel-body">
+
+                        <foreach name="controller.child" item="action">
+                            <div class="col-sm-3">
+                                {$action.title}&nbsp;<a href="__CONTROLLER__/removeNode/id/{$action.id}">[删除]</a>
+                                <a data-target="#node-modal" data-toggle="modal" href="__CONTROLLER__/editNode/id/{$action.id}">[编辑]</a>
+                            </div>
+                        </foreach>
+
+                    </div>
+                </div>
+            </foreach>
+        </div>
+
+    </foreach>
+</div>
+
+
+
+

@@ -1,0 +1,294 @@
+[ 2016-09-16T00:01:42+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004677s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0030s ]
+SQL: UPDATE `blog_draft` SET `title`='是的是的122222222',`content`='{&quot;title&quot;:&quot;是的是的122222222&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute[]&quot;:[&quot;2&quot;,&quot;3&quot;],&quot;tag&quot;:&quot;&quot;,&quot;visible&quot;:&quot;1&quot;,&quot;allowComment&quot;:&quot;1&quot;,&quot;content&quot;:&quot;&lt;p&gt;这里写你的初始化内容&lt;/p&gt;&quot;}',`last_save_time`='2016-09-16 00:09:42' WHERE ( id='45' ) [ RunTime:0.0075s ]
+
+[ 2016-09-16T00:03:20+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007292s ]
+NOTIC: [8] Undefined property: stdClass::$title E:\wamp\www\blog\Blog\Admin\Controller\ArticleController.class.php 第 254 行.
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0023s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{}',`last_save_time`='2016-09-16 00:09:20' WHERE ( id='45' ) [ RunTime:0.0015s ]
+
+[ 2016-09-16T00:04:45+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003298s ]
+NOTIC: [8] Undefined property: stdClass::$title E:\wamp\www\blog\Blog\Admin\Controller\ArticleController.class.php 第 254 行.
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0017s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{}',`last_save_time`='2016-09-16 00:09:45' WHERE ( id='45' ) [ RunTime:0.0010s ]
+
+[ 2016-09-16T00:05:33+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002804s ]
+NOTIC: [8] Undefined property: stdClass::$title E:\wamp\www\blog\Blog\Admin\Controller\ArticleController.class.php 第 254 行.
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0019s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{}',`last_save_time`='2016-09-16 00:09:33' WHERE ( id='45' ) [ RunTime:0.0011s ]
+
+[ 2016-09-16T00:06:08+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002426s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003654s ]
+NOTIC: [8] Undefined property: stdClass::$title E:\wamp\www\blog\Blog\Admin\Controller\ArticleController.class.php 第 254 行.
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0015s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{}',`last_save_time`='2016-09-16 00:09:08' WHERE ( id='45' ) [ RunTime:0.0010s ]
+
+[ 2016-09-16T00:06:56+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002269s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004081s ]
+NOTIC: [8] Undefined property: stdClass::$title E:\wamp\www\blog\Blog\Admin\Controller\ArticleController.class.php 第 254 行.
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0021s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{}',`last_save_time`='2016-09-16 00:09:56' WHERE ( id='45' ) [ RunTime:0.0010s ]
+
+[ 2016-09-16T00:07:18+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006926s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0018s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute[]&quot;:&quot;2&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:18' WHERE ( id='45' ) [ RunTime:0.0012s ]
+
+[ 2016-09-16T00:08:00+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005279s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0078s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute[]&quot;:&quot;3&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:00' WHERE ( id='45' ) [ RunTime:0.0017s ]
+
+[ 2016-09-16T00:14:01+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003938s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0020s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute[]&quot;:&quot;3&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:01' WHERE ( id='45' ) [ RunTime:0.0011s ]
+
+[ 2016-09-16T00:15:16+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003613s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0016s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute[]&quot;:&quot;2&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:16' WHERE ( id='45' ) [ RunTime:0.0011s ]
+
+[ 2016-09-16T00:16:12+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004020s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0016s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute[]&quot;:&quot;2&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:12' WHERE ( id='45' ) [ RunTime:0.0009s ]
+
+[ 2016-09-16T00:16:36+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004433s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0019s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:36' WHERE ( id='45' ) [ RunTime:0.0011s ]
+
+[ 2016-09-16T00:18:14+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003602s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0022s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:14' WHERE ( id='45' ) [ RunTime:0.0011s ]
+
+[ 2016-09-16T00:19:43+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004510s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0014s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:43' WHERE ( id='45' ) [ RunTime:0.0009s ]
+
+[ 2016-09-16T00:20:01+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005831s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0016s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:00' WHERE ( id='45' ) [ RunTime:0.0012s ]
+
+[ 2016-09-16T00:20:46+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004409s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0015s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:46' WHERE ( id='45' ) [ RunTime:0.0010s ]
+
+[ 2016-09-16T00:23:45+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004208s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0019s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:45' WHERE ( id='45' ) [ RunTime:0.0012s ]
+
+[ 2016-09-16T00:23:55+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007641s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0017s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute&quot;:[&quot;3&quot;],&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:55' WHERE ( id='45' ) [ RunTime:0.0013s ]
+
+[ 2016-09-16T00:24:06+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.012749s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0016s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute&quot;:[&quot;3&quot;],&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:06' WHERE ( id='45' ) [ RunTime:0.0010s ]
+
+[ 2016-09-16T00:24:23+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003381s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0020s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute&quot;:[&quot;3&quot;],&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:23' WHERE ( id='45' ) [ RunTime:0.0012s ]
+
+[ 2016-09-16T00:25:53+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003145s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0021s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute&quot;:[&quot;3&quot;],&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:53' WHERE ( id='45' ) [ RunTime:0.0010s ]
+
+[ 2016-09-16T00:30:41+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003705s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0019s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute&quot;:[&quot;1&quot;,&quot;1&quot;,&quot;2&quot;],&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:41' WHERE ( id='45' ) [ RunTime:0.0014s ]
+
+[ 2016-09-16T00:32:29+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004226s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0024s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute&quot;:[&quot;3&quot;,&quot;3&quot;],&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:29' WHERE ( id='45' ) [ RunTime:0.0016s ]
+
+[ 2016-09-16T00:33:07+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003320s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0023s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;&quot;,&quot;attribute&quot;:[&quot;1&quot;,&quot;1&quot;],&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:07' WHERE ( id='45' ) [ RunTime:0.0010s ]
+
+[ 2016-09-16T00:33:18+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005164s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0017s ]
+SQL: UPDATE `blog_draft` SET `title`='',`content`='{&quot;title&quot;:&quot;&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;/uploads/temp/57dacd4e5d3bd.jpeg&quot;,&quot;attribute&quot;:[&quot;1&quot;,&quot;1&quot;],&quot;tag&quot;:&quot;&quot;}',`last_save_time`='2016-09-16 00:09:18' WHERE ( id='45' ) [ RunTime:0.0014s ]
+
+[ 2016-09-16T00:33:35+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003034s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0020s ]
+SQL: UPDATE `blog_draft` SET `title`='ewew',`content`='{&quot;title&quot;:&quot;ewew&quot;,&quot;summary&quot;:&quot;ewewew&quot;,&quot;cover&quot;:&quot;/uploads/temp/57dacd4e5d3bd.jpeg&quot;,&quot;attribute&quot;:[&quot;1&quot;,&quot;1&quot;],&quot;tag&quot;:&quot;ewew&quot;,&quot;content&quot;:&quot;&lt;p&gt;ewewweew&lt;/p&gt;&quot;}',`last_save_time`='2016-09-16 00:09:35' WHERE ( id='45' ) [ RunTime:0.0013s ]
+
+[ 2016-09-16T00:33:47+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/45
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003235s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0016s ]
+SQL: UPDATE `blog_draft` SET `title`='ewew',`content`='{&quot;title&quot;:&quot;ewew&quot;,&quot;summary&quot;:&quot;ewewew&quot;,&quot;cover&quot;:&quot;/uploads/temp/57dacd4e5d3bd.jpeg&quot;,&quot;attribute&quot;:[&quot;1&quot;,&quot;1&quot;],&quot;tag&quot;:&quot;ewew&quot;,&quot;visible&quot;:&quot;1&quot;,&quot;allowComment&quot;:&quot;1&quot;,&quot;content&quot;:&quot;&lt;p&gt;ewewweew&lt;/p&gt;&quot;}',`last_save_time`='2016-09-16 00:09:47' WHERE ( id='45' ) [ RunTime:0.0015s ]
+
+[ 2016-09-16T00:34:31+08:00 ] ::1 /index.php/Admin/Article/removeCover/id/30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001131s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002151s ]
+SQL: SHOW COLUMNS FROM `blog_article` [ RunTime:0.0021s ]
+SQL: SELECT `cover` FROM `blog_article` WHERE ( id = '30' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `blog_article` SET `cover`='' WHERE ( id='30' ) [ RunTime:0.0009s ]
+
+[ 2016-09-16T00:47:38+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003166s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0028s ]
+SQL: INSERT INTO `blog_draft` (`title`,`content`,`last_save_time`) VALUES ('ewew','{&quot;title&quot;:&quot;ewew&quot;,&quot;summary&quot;:&quot;ewewew&quot;,&quot;cover&quot;:&quot;/uploads/cover/2016-09/16/57dacd9cb0c8c.png&quot;,&quot;category&quot;:&quot;7&quot;,&quot;attribute[]&quot;:&quot;1&quot;,&quot;tag&quot;:&quot;&quot;,&quot;visible&quot;:&quot;1&quot;,&quot;allowComment&quot;:&quot;1&quot;,&quot;content&quot;:&quot;&lt;p&gt;ewewweew&lt;/p&gt;&quot;}','2016-09-16 00:09:38') [ RunTime:0.0018s ]
+
+[ 2016-09-16T00:47:54+08:00 ] ::1 /index.php/Admin/Article/removeCover/id/30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001188s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002255s ]
+SQL: SHOW COLUMNS FROM `blog_article` [ RunTime:0.0035s ]
+SQL: SELECT `cover` FROM `blog_article` WHERE ( id = '30' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `blog_article` SET `cover`='' WHERE ( id='30' ) [ RunTime:0.0012s ]
+
+[ 2016-09-16T00:48:30+08:00 ] ::1 /index.php/Admin/Article/removeAtricle/id/1
+ERR: 非法操作:removeAtricle
+
+[ 2016-09-16T01:10:17+08:00 ] ::1 /index.php/Admin/Article/removeAtricle/id/1
+ERR: 非法操作:removeAtricle
+
+[ 2016-09-16T01:10:32+08:00 ] ::1 /index.php/Admin/Article/removeAtricle/id/27
+ERR: 非法操作:removeAtricle
+
+[ 2016-09-16T01:11:44+08:00 ] ::1 /index.php/Admin/Article/removeDraft/id/10
+ERR: 非法操作:removeDraft
+
+[ 2016-09-16T01:23:56+08:00 ] ::1 /index.php/Admin/Article/removeCover/id/30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005106s ]
+SQL: SHOW COLUMNS FROM `blog_article` [ RunTime:0.0020s ]
+SQL: SELECT `cover` FROM `blog_article` WHERE ( id = '30' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: UPDATE `blog_article` SET `cover`='' WHERE ( id='30' ) [ RunTime:0.0013s ]
+
+[ 2016-09-16T01:25:18+08:00 ] ::1 /index.php/Admin/Article/removeCover/id/30
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003312s ]
+SQL: SHOW COLUMNS FROM `blog_article` [ RunTime:0.0019s ]
+SQL: SELECT `cover` FROM `blog_article` WHERE ( id = '30' ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `blog_article` SET `cover`='' WHERE ( id='30' ) [ RunTime:0.0007s ]
+
+[ 2016-09-16T01:25:49+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004825s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0020s ]
+SQL: INSERT INTO `blog_draft` (`title`,`content`,`last_save_time`) VALUES ('ewew','{&quot;title&quot;:&quot;ewew&quot;,&quot;summary&quot;:&quot;ewewew&quot;,&quot;cover&quot;:&quot;/uploads/temp/57dad99c95913.jpg&quot;,&quot;category&quot;:&quot;7&quot;,&quot;attribute[]&quot;:&quot;1&quot;,&quot;tag&quot;:&quot;&quot;,&quot;visible&quot;:&quot;1&quot;,&quot;allowComment&quot;:&quot;1&quot;,&quot;content&quot;:&quot;&lt;p&gt;ewewweew&lt;/p&gt;&quot;}','2016-09-16 01:09:49') [ RunTime:0.0011s ]
+
+[ 2016-09-16T01:26:35+08:00 ] ::1 /index.php/Admin/Article/removeCover/id/60
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002523s ]
+SQL: SHOW COLUMNS FROM `blog_article` [ RunTime:0.0017s ]
+SQL: SELECT `cover` FROM `blog_article` WHERE ( id = '60' ) LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2016-09-16T01:26:42+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/60
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003700s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0016s ]
+SQL: UPDATE `blog_draft` SET `title`='ewew',`content`='{&quot;title&quot;:&quot;ewew&quot;,&quot;summary&quot;:&quot;ewewew&quot;,&quot;cover&quot;:&quot;/uploads/temp/57dad9d2150e2.png&quot;,&quot;tag&quot;:&quot;&quot;,&quot;visible&quot;:&quot;1&quot;,&quot;allowComment&quot;:&quot;1&quot;,&quot;content&quot;:&quot;&lt;p&gt;ewewweew&lt;/p&gt;&quot;}',`last_save_time`='2016-09-16 01:09:42' WHERE ( id='60' ) [ RunTime:0.0011s ]
+
+[ 2016-09-16T01:27:07+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/60
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002754s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0017s ]
+SQL: UPDATE `blog_draft` SET `title`='ewew',`content`='{&quot;title&quot;:&quot;ewew&quot;,&quot;summary&quot;:&quot;ewewew&quot;,&quot;cover&quot;:&quot;/uploads/temp/57dad9d2150e2.png&quot;,&quot;tag&quot;:&quot;&quot;,&quot;visible&quot;:&quot;1&quot;,&quot;allowComment&quot;:&quot;1&quot;,&quot;content&quot;:&quot;&lt;p&gt;ewewweew&lt;/p&gt;&quot;}',`last_save_time`='2016-09-16 01:09:07' WHERE ( id='60' ) [ RunTime:0.0011s ]
+
+[ 2016-09-16T01:28:35+08:00 ] ::1 /index.php/Admin/Article/removeCover/id/61
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001176s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002229s ]
+SQL: SHOW COLUMNS FROM `blog_article` [ RunTime:0.0020s ]
+SQL: SELECT `cover` FROM `blog_article` WHERE ( id = '61' ) LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2016-09-16T01:28:43+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/61
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003248s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0020s ]
+SQL: UPDATE `blog_draft` SET `title`='ewew',`content`='{&quot;title&quot;:&quot;ewew&quot;,&quot;summary&quot;:&quot;ewewew&quot;,&quot;cover&quot;:&quot;/uploads/temp/57dada498c652.jpg&quot;,&quot;tag&quot;:&quot;&quot;,&quot;visible&quot;:&quot;1&quot;,&quot;allowComment&quot;:&quot;1&quot;,&quot;content&quot;:&quot;&lt;p&gt;ewewweew&lt;/p&gt;&quot;}',`last_save_time`='2016-09-16 01:09:42' WHERE ( id='61' ) [ RunTime:0.0014s ]
+
+[ 2016-09-16T01:29:41+08:00 ] ::1 /index.php/Admin/Article/saveDraft/id/59
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002049s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003299s ]
+SQL: SHOW COLUMNS FROM `blog_draft` [ RunTime:0.0020s ]
+SQL: UPDATE `blog_draft` SET `title`='是的是的122222222',`content`='{&quot;title&quot;:&quot;是的是的122222222&quot;,&quot;summary&quot;:&quot;&quot;,&quot;cover&quot;:&quot;/uploads/temp/57dada842fafa.jpg&quot;,&quot;tag&quot;:&quot;&quot;,&quot;visible&quot;:&quot;1&quot;,&quot;allowComment&quot;:&quot;1&quot;,&quot;content&quot;:&quot;&lt;p&gt;这里写你的初始化内容&lt;/p&gt;&quot;}',`last_save_time`='2016-09-16 01:09:41' WHERE ( id='59' ) [ RunTime:0.0015s ]
+

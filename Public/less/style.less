@@ -1,0 +1,509 @@
+@primary:#e22e2e;
+@sub : #222222;
+@w :#ffffff;
+@g :#777;
+@b :#111;
+@focus:#66afe9;
+@lightgray :#f1f1f1;
+html{height: 100%}
+body{ font-family: "Microsoft Yahei"; padding-top: 40px; overflow: hidden; height: 100%;}
+
+.list-style(@padding: 0,@margin: 0){
+	padding: @padding;
+	margin: @margin;
+	list-style: none;
+}
+
+#header{
+	position: fixed;
+	width: 100%;
+	height: 40px;
+	margin-top: -40px;
+	z-index: 1000;
+	background-color: @sub;
+	box-shadow :-3px 2px #444;
+	.badge{ background-color: @primary; margin-left: 5px; }
+	.container{
+		button{
+			display: none;
+			border:none;
+		}
+		ul{ 
+			.list-style;
+			li{ 
+				float: left;
+				a{
+					color: @g;
+					font-size: 12px;
+					line-height: 12px;
+					padding: 14px 10px;
+					display: inline-block;
+					span{
+						margin-right: 5px;
+					}
+					&:hover{
+						color: @primary;
+					}
+				}
+			}
+		}
+	}
+}
+
+#navList{
+	width: 260px;
+	background-color: #222;
+	height: 100%;
+	position: fixed;
+	ul{
+		.list-style;
+		li{
+			margin-left: 20px;
+			a{
+				border-bottom:1px solid #333;
+				height: 40px;
+				display: block;
+				line-height: 40px;
+				text-decoration: none;
+				color: @g;
+				&:hover{color:@primary;}
+				span{
+						line-height: 40px;
+						margin-right: 15px;
+						transition: all 1s;
+					}
+			}
+			ul{
+					display: none;
+				}
+		}
+	}
+}
+
+#main{
+	position: absolute;
+	left: 260px;
+	right: 0px;
+	top:40px;
+	bottom: 0px;
+	overflow: auto;
+	padding:10px;
+}
+
+
+ @media screen and (max-width: 768px) {
+ 	html,body{height: auto;}
+ 	body{overflow: auto;}
+	#header{
+		.container {
+			button{
+				margin: 4px 0;
+				padding: 0;
+				border: 1px solid @g;
+				background-color: @b;
+				span{
+					color: #777;
+					font-size: 20px;
+					line-height: 20px;
+					padding: 4px 10px;
+				}
+			}
+			.brand { display: block; position: absolute; left: 50%; top:0; margin-left: -60px;  }
+			button{
+				display: inline-block;
+			}
+		}
+	}
+	#navList{
+		display: none;
+		position: relative;
+		width: 100%;
+		margin-top: 0;
+		margin-bottom: 0px;
+		height: auto;
+		ul{
+			.list-style;
+			width: 100%;
+		}
+	}
+	#main{
+		position: relative;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 0px;
+	}
+}
+
+
+/* addUser page */
+
+.editUser,.addUser{
+	.mulitSelect-box{
+		position: relative;
+		.checkList{
+			display: none;
+			position: absolute;
+			width: 100%;
+			margin-top: -2px;
+			z-index: 1;
+			border-bottom: 1px solid @focus;
+			border-left: 1px solid @focus;
+			border-right: 1px solid @focus;
+			box-shadow: 0 0px 3px @focus; 
+			background-color: @w;
+			.list-style;
+			li{
+				padding-left: 15px;
+				label{	
+					margin: 6px 0;
+					width: 100%;
+				}
+			}
+
+		}
+	}
+}
+
+
+/* login page css */
+.login{
+	      background-color: @lightgray;
+}
+
+.login-box{
+	margin-top: 30px;
+	width: 320px;
+    .login-title{
+      text-align: center;
+      font-size: 48px;
+      font-weight: bold;
+      height: 80px;
+    }
+    .login-content{
+    	background-color: @w;
+    	padding: 30px 20px 20px;
+    	img{
+    		height: 34px;
+    	}
+    }
+}
+
+
+
+/*nodeList*/
+.nodeList{
+	.addNodeButton{
+		margin-bottom: 20px;
+	}
+	.module{
+		border: 1px solid #ddd;
+		padding: 20px 20px 0 20px;
+		margin-bottom: 30px;
+		background-color: #f9f9f9;
+		border-radius: 3px;
+		.title{
+			display: inline-block;
+		}
+		.panel{
+			.panel-body{
+				text-align: center;
+				div{
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+
+.addButton{
+		margin-bottom: 20px;
+	}
+
+
+
+/* roleList page */
+.uerList,.roleList,.attributeList,.AlbumList{
+	.table{
+		thead{
+			th{
+				text-align:center;
+			} 
+		}
+		tbody{
+			td{
+				text-align:center;
+			}
+		}
+	}
+}
+
+
+/* removeRole page */
+.removeUser,.removeRole{
+	.modal-body{
+		height: 80px;
+		.icon{
+			font-size: 48px;
+			line-height: 48px;
+			color: @primary;
+			height: 60px;
+			text-align: center;
+		}
+		.msg{
+			height: 60px;
+		}
+	}
+}
+
+
+
+
+/* addAlbum page */
+.addAlbum {
+	.cover{
+		margin-bottom: 20px;
+
+	}
+	.crop-box{
+		padding-bottom: 66.66666667%;
+		background-color: #eee;
+		padding-left: 0px;
+		padding-right: 0px;
+		img{
+			top: 0;
+			width: 100%;
+		}
+	}
+	.preview{
+		/* border: 1px solid #eee;
+		padding: 50% */
+		overflow: hidden;
+		img{width:100%}
+	}
+}
+
+#picker{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -43px;
+	margin-top: -20px;
+}
+
+
+/* AlbumList page */
+.AlbumList {
+	.album{
+		margin: 0 auto;
+		margin-bottom: 50px;
+		box-shadow: 0 1px 3px @g;
+		border-radius: 2px;
+		width: 170px;
+		padding: 5px;
+		.album-pic{
+			position: relative;
+			img{
+				
+			}
+			.edit{
+				position: absolute;
+				top: 0;
+				right: 0;
+				.edit-button{
+					border: none;
+					background-color: #fff;
+					opacity: 0.8;
+				}
+			}
+		}
+
+		.Album-title{
+			height: 30px;
+			line-height: 30px;
+			font-size: 16px;
+			text-indent: 10px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px){
+	.AlbumList {
+		.album{
+			margin-bottom: 10px;
+			width: 125px;
+			padding: 2px;
+			.album-pic{
+				img{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+/* add picture page */
+.addPicture{
+	.filePicker{
+		text-align: center;
+	} 
+	
+	.modal-body{
+		.upload-done{
+				position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    font-size: 30px;
+			    line-height: 30px;
+			    margin-left: -15px;
+			    margin-top: -25px;
+			    color: green;
+			}
+		.upload-error{
+			position: absolute;
+		    top: 50%;
+		    left: 50%;
+		    font-size: 30px;
+		    line-height: 30px;
+		    margin-left: -15px;
+		    margin-top: -25px;
+		    color: red;
+		}
+	}
+}
+
+
+/* picture list page */
+.pictureList{
+	.modal{
+		.picture-box{
+			text-align: center;
+			img{
+				max-width: 100%;
+				max-height: 450px;
+			}
+		}
+	}
+
+	.thumb-box{
+		margin-bottom: 20px;
+		.thumbnail{
+			height: 220px;
+			width: 220px;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.delPicture{
+			 position:absolute;
+			 margin-top: -21px;
+			 margin-left: 1px;
+			 background-color: #fff;
+			 height: 20px;
+			 padding-left: 5px;
+			 font-size: 12px;
+			 line-height: 20px;
+		}
+	}
+}
+
+@media screen and (max-width: 768px){
+	.pictureList{
+		.modal{
+			.picture-box{
+				text-align: center;
+				margin-top: 100px;
+			}
+		}
+		.thumb-box{
+			margin-bottom: 20px;
+			.thumbnail{
+				height: 125px;
+				width: 125px;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+
+/* articleList page */
+.articleList{
+	.left-side{
+		
+	}
+
+	.right-side{
+		.cover-box{
+			height: 130px;
+			background-color: @lightgray;
+			position: relative;
+			.filePicker{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -44px;
+				margin-top: -20px;
+			}
+			.cover-picture{
+				background-position:center;
+                background-size:100% auto;
+                background-repeat:no-repeat;
+                height:100%;
+                .delete-picture{
+                	height: 40px;
+                	background-color:rgba(4,4,4,0.5);
+                	bottom: 0;
+                	position: absolute;
+    				width: 100%;
+    				text-align: center;
+    				display: none;
+    				span{
+    					font-size: 24px;
+    					color: #fff;
+    					line-height: 40px;
+    				}
+                }
+			}
+		}
+		.category-select{
+			.box{
+				border: 1px solid #ccc;
+				padding-left: 15px;
+				height: 95px;
+				overflow: auto;
+				.child{
+					padding-left: 20px;
+				}
+			}
+
+		}
+		.upload-error{
+			height: 130px;
+			background-color: @lightgray;
+			vertical-align: middle;
+			text-align: center;
+			color: red;
+			line-height: 130px;
+			
+		}
+	}
+}
+
+
+
+
+
+
+/* login page media*/
+@media screen and (max-width: 768px){
+  .login{
+	      background-color: @w;
+	}
+}

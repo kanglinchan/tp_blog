@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<form method="post" action="__CONTROLLER__/editNode/id/{$data.id}">
+    <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal">
+            &times;
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+            <if condition="$data.level eq 1"> 编辑应用
+                <elseif condition="$data.level eq 2"/>编辑控制器
+                <else /> 编辑方法
+            </if>
+        </h4>
+    </div>
+    <div class="modal-body" >
+        <div class="form-group">
+            <label for="name">
+                <if condition="$data.level eq 1"> 应用名称
+                    <elseif condition="$data.level eq 2"/>控制器名称
+                    <else /> 方法名称
+                </if>
+            </label>
+            <input type="text" class="form-control" name="name" id="name" value="{$data.name}">
+        </div>
+        <div class="form-group">
+            <label for="title">
+                <if condition="$data.level eq 1"> 应用描述
+                    <elseif condition="$data.level eq 2"/>控制器描述
+                    <else /> 方法描述
+                </if>
+            </label>
+            <input type="text" class="form-control" name="title" id="title" value="{$data.title}">
+        </div>
+        <div class="form-group">
+            <label for="sort">排序</label>
+            <input type="text" class="form-control" name="sort" id="sort" value={$data.sort} >
+        </div>
+        <div class="checkbox">
+            <label>
+            <if condition="$data.status eq 0">
+                <input name="status" value="1" type="checkbox">
+                <else />
+                <input name="status" checked="checked" value="1" type="checkbox">
+            </if>是否启用
+
+            </label>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default"
+                data-dismiss="modal">关闭
+        </button>
+        <button type="submit"  class="btn btn-primary">
+            提交更改
+        </button>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<div id="DraftList">
+    <ol class="breadcrumb">
+        <li><a href="__MODULE__">{$Think.MODULE_NAME}</a></li>
+        <li><a href="__CONTROLLER__">{$Think.CONTROLLER_NAME}</a></li>
+        <li class="active">{$Think.ACTION_NAME}</li>
+    </ol>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th width="100">ID</th>
+            <th width="400">文章名称</th>
+            <th width="200">最后修改时间</th>
+            <th width="300">最后修改时间</th>
+        </tr>
+        </thead>
+        <tbody>
+            <foreach name="drafts" item="draft">
+                <tr>
+                    <td> {$draft.id}</td>
+                    <td>
+                        <a href="__CONTROLLER__/editDraft/id/{$draft.id}">
+                            {$draft.title}
+                        </a>
+                    </td>
+                    <td> {$draft.last_save_time}</td>
+                    <td>
+                        <a href="__CONTROLLER__/removeDraft/id/{$draft.id}">删除</a>
+                        <a href="__CONTROLLER__/editDraft/id/{$draft.id}">编辑</a>
+                    </td>
+                </tr>
+            </foreach>
+        </tbody>
+    </table>
+
+
+
+
+    <nav style="text-align: center">
+        <ul class="pagination">
+            <if condition="$page.current gt 1">
+                <li>
+                    <a href="__CONTROLLER__/draftList/number/{$page['current'] +1}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            </if>
+            <for start="1" end="$page.total" comparison="elt">
+                <if condition="$page.current eq $i">
+                    <li class="active"><a href="__CONTROLLER__/draftList/number/{$i}">{$i}</a></li>
+                    <else/>
+                    <li><a href="__CONTROLLER__/draftList/number/{$i}">{$i}</a></li>
+                </if>
+            </for>
+            <if condition="$page.current lt $page['total']">
+                <li>
+                    <a href="__CONTROLLER__/draftList/number/{$page['current']+1}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </if>
+        </ul>
+    </nav>
+
+
+
+
+</div>

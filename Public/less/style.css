@@ -1,0 +1,128 @@
+body {
+  font-family: "Microsoft Yahei";
+  padding-top: 40px;
+}
+#header {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  margin-top: -40px;
+  z-index: 99;
+  background-color: #222222;
+  box-shadow: -3px 2px #444;
+}
+#header .badge {
+  background-color: #e22e2e;
+  margin-left: 5px;
+}
+#header .container button {
+  display: none;
+  border: none;
+}
+#header .container ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#header .container ul li {
+  float: left;
+}
+#header .container ul li a {
+  color: #777;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 14px 10px;
+  display: inline-block;
+}
+#header .container ul li a span {
+  margin-right: 5px;
+}
+#header .container ul li a:hover {
+  color: #e22e2e;
+}
+#navList {
+  width: 20%;
+  background-color: #222;
+  height: 100%;
+  position: fixed;
+}
+#navList ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#navList ul li {
+  margin-left: 20px;
+}
+#navList ul li a {
+  border-bottom: 1px solid #333;
+  height: 40px;
+  display: block;
+  line-height: 40px;
+  text-decoration: none;
+  color: #777;
+}
+#navList ul li a:hover {
+  color: #e22e2e;
+}
+#navList ul li a span {
+  line-height: 40px;
+  margin-right: 15px;
+  transition: all 1s;
+}
+#navList ul li ul {
+  display: none;
+}
+#main {
+  width: 80%;
+  float: right;
+  padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  #header .container button {
+    margin: 4px 0;
+    padding: 0;
+    border: 1px solid #777;
+    background-color: #111;
+  }
+  #header .container button span {
+    color: #777;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 4px 10px;
+  }
+  #header .container .brand {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -60px;
+  }
+  #header .container button {
+    display: inline-block;
+  }
+  #navList {
+    display: none;
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
+  #navList ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+  }
+  #main {
+    width: 100%;
+    float: none;
+    padding: 20px;
+  }
+}
+/* login page css */
+.login-box {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}

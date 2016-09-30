@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="__CONTROLLER__/addNode/pid/{$data.pid}/level/{$data.level}">
+        <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal">
+                &times;
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+                <if condition="$data.level eq 1"> 添加应用
+                    <elseif condition="$data.level eq 2"/>添加控制器
+                    <else /> 添加方法
+                </if>
+            </h4>
+        </div>
+        <div class="modal-body" >
+                <div class="form-group">
+                    <label for="name">
+                        <if condition="$data.level eq 1"> 应用名称
+                            <elseif condition="$data.level eq 2"/>控制器名称
+                            <else /> 方法名称
+                        </if>
+                    </label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="英文名称注意大小写">
+                </div>
+                <div class="form-group">
+                    <label for="title">
+                        <if condition="$data.level eq 1"> 应用描述
+                            <elseif condition="$data.level eq 2"/>控制器描述
+                            <else /> 方法描述
+                        </if>
+                    </label>
+                    <input type="text" class="form-control" name="title" id="title" placeholder="中文名称">
+                </div>
+                <div class="form-group">
+                    <label for="sort">排序</label>
+                    <input type="text" class="form-control" name="sort" id="sort" value=1 >
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input name="status" value="1" checked="checked" type="checkbox"> 是否启用
+                    </label>
+                </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default"
+                    data-dismiss="modal">关闭
+            </button>
+            <button type="submit"  class="btn btn-primary">
+                提交更改
+            </button>
+        </div>
+    </form>
+</body>
+</html>
