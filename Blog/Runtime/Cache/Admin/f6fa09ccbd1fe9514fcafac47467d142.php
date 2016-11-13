@@ -98,17 +98,6 @@
 
 <div id="main">
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>articleList</title>
-    <link rel="stylesheet" href="/Public/lib/webupload/webuploader.css">
-</head>
-<body>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
@@ -409,9 +398,6 @@
 
 </body>
 </html>
-
-</body>
-</html>
 </div>
 
 
@@ -458,7 +444,12 @@
         });
 
     });
-</script>
 
+
+
+
+
+
+</script>
 </body>
 </html>

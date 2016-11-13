@@ -136,18 +136,26 @@
     <nav style="text-align: center">
         <ul class="pagination">
             <?php if($page["current"] > 1): ?><li>
-                    <a href="/index.php/Admin/Article/draftList/number/<?php echo ($page['current'] +1); ?>" aria-label="Previous">
+                    <a href="/index.php/Admin/Article/draftList/number/<?php echo ($page['current'] -1); ?>" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
+                </li>
+                <?php else: ?>
+                <li>
+                    <span aria-hidden="true">&laquo;</span>
                 </li><?php endif; ?>
-            <?php $__FOR_START_29602__=1;$__FOR_END_29602__=$page["total"];for($i=$__FOR_START_29602__;$i <= $__FOR_END_29602__;$i+=1){ if($page["current"] == $i): ?><li class="active"><a href="/index.php/Admin/Article/draftList/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li>
+            <?php $__FOR_START_10208__=1;$__FOR_END_10208__=$page["total"];for($i=$__FOR_START_10208__;$i <= $__FOR_END_10208__;$i+=1){ if($page["current"] == $i): ?><li class="active"><a href="/index.php/Admin/Article/draftList/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li>
                     <?php else: ?>
                     <li><a href="/index.php/Admin/Article/draftList/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li><?php endif; } ?>
             <?php if($page["current"] < $page['total']): ?><li>
                     <a href="/index.php/Admin/Article/draftList/number/<?php echo ($page['current']+1); ?>" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
-                </li><?php endif; ?>
+                </li>
+                <?php else: ?>
+                    <li>
+                        <span aria-hidden="true">&raquo;</span>
+                    </li><?php endif; ?>
         </ul>
     </nav>
 

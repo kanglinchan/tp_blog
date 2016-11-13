@@ -80,10 +80,15 @@
 
             <if condition="$page.current gt 1">
                 <li>
-                    <a href="__CONTROLLER__/index/number/{$page['current'] +1}" aria-label="Previous">
+                    <a href="__CONTROLLER__/index/number/{$page['current'] -1}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
+                <else/>
+                <li>
+                    <span aria-hidden="true">&laquo;</span>
+                </li>
+
             </if>
             <for start="1" end="$page.total" comparison="elt">
                 <if condition="$page.current eq $i">
@@ -97,6 +102,10 @@
                     <a href="__CONTROLLER__/index/number/{$page['current']+1}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
+                </li>
+                <else/>
+                <li>
+                    <span aria-hidden="true">&raquo;</span>
                 </li>
             </if>
         </ul>

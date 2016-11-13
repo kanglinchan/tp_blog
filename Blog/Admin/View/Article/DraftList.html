@@ -40,9 +40,13 @@
         <ul class="pagination">
             <if condition="$page.current gt 1">
                 <li>
-                    <a href="__CONTROLLER__/draftList/number/{$page['current'] +1}" aria-label="Previous">
+                    <a href="__CONTROLLER__/draftList/number/{$page['current'] -1}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
+                </li>
+                <else/>
+                <li>
+                    <span aria-hidden="true">&laquo;</span>
                 </li>
             </if>
             <for start="1" end="$page.total" comparison="elt">
@@ -58,6 +62,10 @@
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
+                <else/>
+                    <li>
+                        <span aria-hidden="true">&raquo;</span>
+                    </li>
             </if>
         </ul>
     </nav>

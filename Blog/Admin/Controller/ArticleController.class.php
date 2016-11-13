@@ -15,12 +15,16 @@
 
             $current =I("number",0,'int');
             $Article = M("Article");
-            $data = $Article
-                ->join("LEFT JOIN blog_user ON blog_article.user_id = blog_user.id")
-                ->join("LEFT JOIN blog_category ON blog_article.category_id = blog_category.id")
-                ->field('blog_user.username , blog_category.name, blog_article.title, blog_article.id, blog_article.last_modify_time ')
+            $data = M()
+                ->table("blog_article AS A")
+                ->join("LEFT JOIN blog_user AS U ON A.user_id = U.id")
+                ->join("LEFT JOIN blog_category AS C ON A.category_id = C.id")
+                ->join("LEFT JOIN blog_comment AS CT ON A.id = CT.article_id")
+                ->field('U.username , C.name, A.title, A.id, A.last_modify_time, count(CT.id) AS count')
+                ->group("A.id")
                 ->page($current, C("PAGE_SIZE"))
                 ->select();
+
 
             $total = $Article->count();
             $page['total'] = ceil($total / C('PAGE_SIZE'));
@@ -33,6 +37,66 @@
             $this->article = $data;
             $this->display();
         }
+
+
+        public function comment(){
+
+            $aid = I("get.id", 0, 'int');
+            $current =I("number",0,'int');
+
+            $articleData = M("article")
+                ->field("id, title")
+                ->where("id = %d", $aid)
+                ->find();
+
+            $commentData = M("comment")
+                ->field("id, content, email, author, time, visible")
+                ->where("article_id = %d", $aid)
+                ->page($current, C('PAGE_SIZE') )
+                ->order("id DESC")
+                ->select();
+
+
+            $total = M("comment")->count();
+            $page['total'] = ceil($total / C('PAGE_SIZE'));
+            $page['current'] = $current;
+            $this->page = $page;
+
+            $articleData['comments'] = $commentData;
+            $this->article = $articleData;
+
+            $this->display();
+
+        }
+
+        public function commentVisible(){
+            $id = I("get.id", 0, 'int');
+            $visible = M("comment")->where("id=%d", $id)->field("abs(visible -1) AS visible")->find();
+            $data = M("comment")->where("id=%d",$id)->save( $visible );
+            $data ? die(json_encode(array("flag"=>true))) : die(json_encode(array("flag"=>false)));
+        }
+
+
+
+        public function reply(){
+            $id = I("post.id", 0, 'int');
+            $data['content'] = I("post.content", '');
+            $data['time'] = date("Y-m-d H:i:s");
+            $data['visible'] = 1;
+            $userId = session("userId");
+            ($id == 0 || $data['content'] == '' ) AND die(json_encode(array("flag"=>false)));
+
+            $path = M("comment")->where("id=%d",$id)->field("CONCAT(path,',',id) AS path, article_id")->find();
+            $author = M("user")->where("id=%d",$userId)->field("username AS author, email")->find();
+
+            $data= array_merge($path, $author,$data);
+            $flag = M("comment")->add( $data );
+            $data['id'] = $flag;
+
+            $flag ? die(json_encode(array("flag"=>true,"msg"=>$data))) : die(json_encode(array("flag"=>false)));
+
+        }
+
 
         public function getCateDate(){
             $categoryData = D("Article")->getCategory();
@@ -60,7 +124,7 @@
 
                 $data['title']          =I("post.title","");
                 $data['summary']        =I("post.summary","");
-                $data['content']        =I("post.content","");
+                $data['content']        =I("post.content","" );
                 $data['cover']          =I("post.cover","");
                 $data['user_id']        =session( C("USER_AUTH_KEY") );
                 $data['category_id']    =I("post.category", 0, "int");
@@ -71,7 +135,7 @@
                 $data['visible']        =I("post.visible", 0, "int" );
                 $tag                    =I("post.tag","");
                 $tag                    =explode("|",$tag);
-                var_dump($tag);
+
                 for( $i=0; $i<count( $tag )-1; $i++ ){
                     $data['tag'][]        = array('name'=>$tag[$i] );
                 }

@@ -13,6 +13,7 @@
             <th width="200">分类</th>
             <th width="200">作者</th>
             <th width="400">最后修改时间</th>
+            <th width="200">评论数</th>
             <th width="300">操作</th>
         </tr>
         </thead>
@@ -24,6 +25,7 @@
                 <td> {$item.name}</td>
                 <td> {$item.username}</td>
                 <td> {$item.last_modify_time}</td>
+                <td><a href="__CONTROLLER__/comment/id/{$item.id }">{$item.count}</a> </td>
                 <td>
                     <a href="__CONTROLLER__/removeArticle/id/{$item.id}">删除</a>
                     <a href="__CONTROLLER__/editArticle/id/{$item.id}">编辑</a>
@@ -37,11 +39,16 @@
     <nav style="text-align: center">
         <ul class="pagination">
             <if condition="$page.current gt 1">
+                    <li>
+                        <a href="__CONTROLLER__/index/number/{$page['current'] -1}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                <else/>
                 <li>
-                    <a href="__CONTROLLER__/index/number/{$page['current'] +1}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
-                    </a>
                 </li>
+
             </if>
             <for start="1" end="$page.total" comparison="elt">
                 <if condition="$page.current eq $i">
@@ -55,6 +62,10 @@
                     <a href="__CONTROLLER__/index/number/{$page['current']+1}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
+                </li>
+                <else/>
+                <li>
+                    <span aria-hidden="true">&raquo;</span>
                 </li>
             </if>
         </ul>

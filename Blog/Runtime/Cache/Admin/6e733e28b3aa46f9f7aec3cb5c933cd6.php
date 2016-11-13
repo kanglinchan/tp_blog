@@ -112,6 +112,7 @@
             <th width="200">分类</th>
             <th width="200">作者</th>
             <th width="400">最后修改时间</th>
+            <th width="200">评论数</th>
             <th width="300">操作</th>
         </tr>
         </thead>
@@ -122,6 +123,7 @@
                 <td> <?php echo ($item["name"]); ?></td>
                 <td> <?php echo ($item["username"]); ?></td>
                 <td> <?php echo ($item["last_modify_time"]); ?></td>
+                <td><a href="/index.php/Admin/Article/comment/id/<?php echo ($item["id"]); ?>"><?php echo ($item["count"]); ?></a> </td>
                 <td>
                     <a href="/index.php/Admin/Article/removeArticle/id/<?php echo ($item["id"]); ?>">删除</a>
                     <a href="/index.php/Admin/Article/editArticle/id/<?php echo ($item["id"]); ?>">编辑</a>
@@ -134,17 +136,25 @@
     <nav style="text-align: center">
         <ul class="pagination">
             <?php if($page["current"] > 1): ?><li>
-                    <a href="/index.php/Admin/Article/index/number/<?php echo ($page['current'] +1); ?>" aria-label="Previous">
+                        <a href="/index.php/Admin/Article/index/number/<?php echo ($page['current'] -1); ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                <?php else: ?>
+                <li>
                         <span aria-hidden="true">&laquo;</span>
-                    </a>
                 </li><?php endif; ?>
-            <?php $__FOR_START_9717__=1;$__FOR_END_9717__=$page["total"];for($i=$__FOR_START_9717__;$i <= $__FOR_END_9717__;$i+=1){ if($page["current"] == $i): ?><li class="active"><a href="/index.php/Admin/Article/index/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li>
+            <?php $__FOR_START_9284__=1;$__FOR_END_9284__=$page["total"];for($i=$__FOR_START_9284__;$i <= $__FOR_END_9284__;$i+=1){ if($page["current"] == $i): ?><li class="active"><a href="/index.php/Admin/Article/index/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li>
                     <?php else: ?>
                     <li><a href="/index.php/Admin/Article/index/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li><?php endif; } ?>
             <?php if($page["current"] < $page['total']): ?><li>
                     <a href="/index.php/Admin/Article/index/number/<?php echo ($page['current']+1); ?>" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
+                </li>
+                <?php else: ?>
+                <li>
+                    <span aria-hidden="true">&raquo;</span>
                 </li><?php endif; ?>
         </ul>
     </nav>
@@ -195,7 +205,12 @@
         });
 
     });
-</script>
 
+
+
+
+
+
+</script>
 </body>
 </html>

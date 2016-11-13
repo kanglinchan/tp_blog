@@ -237,7 +237,7 @@
             $saveDraft.on("click",function(event){
                 event.preventDefault();
                 var data = $("form").serializeArray();
-
+                 
                 var json = {};
                 for( var i in data){ //整理json数据
                     if( typeof json[ data[i]['name'] ] === 'undefined'  ){
@@ -251,11 +251,9 @@
                     }
                     
                 };
-                
+               
 
                 var params = JSON.stringify(json);
-
-
 
                $.ajax({
                     url: '/index.php/Admin/Article/saveDraft',
@@ -383,7 +381,12 @@
         });
 
     });
-</script>
 
+
+
+
+
+
+</script>
 </body>
 </html>

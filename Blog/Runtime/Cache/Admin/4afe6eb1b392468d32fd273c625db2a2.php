@@ -139,15 +139,23 @@
                     <a href="/index.php/Admin/Article/draftList/number/<?php echo ($page['current'] +1); ?>" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
+                </li>
+                <?php else: ?>
+                <li>
+                    <span aria-hidden="true">&laquo;</span>
                 </li><?php endif; ?>
-            <?php $__FOR_START_13599__=1;$__FOR_END_13599__=$page["total"];for($i=$__FOR_START_13599__;$i <= $__FOR_END_13599__;$i+=1){ if($page["current"] == $i): ?><li class="active"><a href="/index.php/Admin/Article/draftList/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li>
+            <?php $__FOR_START_10324__=1;$__FOR_END_10324__=$page["total"];for($i=$__FOR_START_10324__;$i <= $__FOR_END_10324__;$i+=1){ if($page["current"] == $i): ?><li class="active"><a href="/index.php/Admin/Article/draftList/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li>
                     <?php else: ?>
                     <li><a href="/index.php/Admin/Article/draftList/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li><?php endif; } ?>
             <?php if($page["current"] < $page['total']): ?><li>
                     <a href="/index.php/Admin/Article/draftList/number/<?php echo ($page['current']+1); ?>" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
-                </li><?php endif; ?>
+                </li>
+                <?php else: ?>
+                    <li>
+                        <span aria-hidden="true">&raquo;</span>
+                    </li><?php endif; ?>
         </ul>
     </nav>
 

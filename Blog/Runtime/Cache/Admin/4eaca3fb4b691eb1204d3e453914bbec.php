@@ -200,7 +200,7 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li><?php endif; ?>
-            <?php $__FOR_START_11704__=1;$__FOR_END_11704__=$page["total"];for($i=$__FOR_START_11704__;$i <= $__FOR_END_11704__;$i+=1){ if($page["current"] == $i): ?><li class="active"><a href="/index.php/Admin/Category/index/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li>
+            <?php $__FOR_START_32166__=1;$__FOR_END_32166__=$page["total"];for($i=$__FOR_START_32166__;$i <= $__FOR_END_32166__;$i+=1){ if($page["current"] == $i): ?><li class="active"><a href="/index.php/Admin/Category/index/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li>
                     <?php else: ?>
                     <li ><a href="/index.php/Admin/Category/index/number/<?php echo ($i); ?>"><?php echo ($i); ?></a></li><?php endif; } ?>
             <?php if($page["current"] < $page['total']): ?><li>

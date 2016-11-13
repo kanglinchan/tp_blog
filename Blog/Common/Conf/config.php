@@ -14,13 +14,13 @@ return array(
 	// 系统默认的变量过滤机制
 	'DEFAULT_FILTER'        => 'htmlspecialchars',
 
-	//开启布局
-	'LAYOUT_ON' 			=> true,
-	'LAYOUT_NAME'			=>'layout',
+
+
 
 	// 关闭多模块访问
 	'MULTI_MODULE'          =>  true,
-	'DEFAULT_MODULE'        =>  'Admin',
+	'DEFAULT_MODULE'        =>  'Home',
+	"MODULE_ALLOW_LIST"		=> array( "Home", "Admin" ),
 
 
 	//数据库配置信息
@@ -46,4 +46,28 @@ return array(
 	'RBAC_USER_TABLE'           =>  'blog_role_user',
 	'RBAC_ACCESS_TABLE'         =>  'blog_access',
 	'RBAC_NODE_TABLE'           =>  'blog_node',
+
+	'ERROR_PAGE'=>'/Public/error.html',
+
+	// 开启路由
+	'URL_ROUTER_ON'   => true,
+
+	//路由配置
+	'URL_ROUTE_RULES'=>array(
+		'api/category/[:pid]'						=> "Home/Category/getCategory",
+		'api/search/[:keyWord]/[:pageNumber]'		=> "Home/Search/getArticle",
+		'api/Article/[:id\d]'         				=> 'Home/Article/getArticle',
+		'api/home/[:pageNumber]'					=> "Home/Home/index",
+		'api/categoryList/[:cid]/[:pNumber]'				=> "Home/Article/categoryArticle",
+		"api/AlbumList/[:pageNumber]"				=> "home/Album/getAlbum",
+		"api/pictureList/[:aid]"					=> "home/Album/pictureList",
+		"api/getComment/[:id]/[:number]"			=> "Home/Comment/getComment",
+		"api/submitComment"							=>"Home/Comment/submitComment",
+		"api/reply"									=>"Home/Comment/reply",
+		"api/getCommentTotal/[:aid]"				=>"Home/Comment/getCommentTotal"
+
+	),
+
+	//模糊查询设置
+	//'DB_LIKE_FIELDS'				=>'title|content'
 );

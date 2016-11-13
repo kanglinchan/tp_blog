@@ -426,6 +426,11 @@ body {
   color: red;
   line-height: 130px;
 }
+#comment .reply-modal textarea {
+  resize: none;
+  width: 100%;
+  height: 100px;
+}
 /* login page media*/
 @media screen and (max-width: 768px) {
   .login {
